@@ -7,11 +7,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #f1620e;
-            --secondary: #555555;
-            --accent: #f1620e;
+            --primary: #D4AF37; /* Золотистый цвет вместо желтого */
+            --secondary:#353333;
+            --accent: #D4AF37; /* Золотистый цвет вместо желтого */
             --light: #ecf0f1;
-            --dark: #34495e;
+            --dark: #343836;
         }
         
         * {
@@ -37,7 +37,7 @@
         }
         
         header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: #000000; /* Черный фон */
             color: white;
             text-align: center;
             padding: 80px 0;
@@ -52,8 +52,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('https://neftegaz.ru/upload/resize_cache/iblock/de8/zxty2b6ho2cjew3vj0mr8cesssp50fh0/890_400_1/ses.png') center/cover;
-            opacity: 0.3;
+            background: url('https://images.unsplash.com/photo-1518893880019-7f5f4dd44229?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+            opacity: 0.7;
             z-index: 0;
         }
         
@@ -66,31 +66,33 @@
             font-family: 'Playfair Display', serif;
             font-size: 3.5rem;
             margin-bottom: 20px;
+            color: var(--primary); /* Золотистый цвет для заголовка */
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
         
         h2 {
             font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
             margin: 40px 0 20px;
-            color: var(--secondary);
+            color: var(--primary); /* Золотистый цвет для заголовков */
         }
         
         h3 {
             font-size: 1.5rem;
             margin: 30px 0 15px;
-            color: var(--primary);
+            color: var(--primary); /* Золотистый цвет для подзаголовков */
         }
         
         .date-badge {
             display: inline-block;
             background-color: var(--accent);
-            color: white;
+            color: #000; /* Черный текст на золотом фоне */
             padding: 10px 25px;
             border-radius: 50px;
             font-weight: 600;
             font-size: 1.2rem;
             margin: 20px 0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
         
         section {
@@ -119,6 +121,7 @@
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
+            color: var(--primary); /* Золотистый цвет для меток */
         }
         
         .radio-group {
@@ -138,7 +141,7 @@
         
         button {
             background-color: var(--primary);
-            color: white;
+            color: #000; /* Черный текст на золотом фоне */
             border: none;
             padding: 15px 30px;
             font-size: 1.1rem;
@@ -150,9 +153,9 @@
         }
         
         button:hover {
-            background-color: #1f9c1f;
+            background-color: #C9B037; /* Более темный золотистый */
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         .map-container {
@@ -181,7 +184,7 @@
         
         .location-link:hover {
             color: #d3cbcb00;
-            border-color: #c0392b;
+            border-color: var(--primary);
         }
         
         .dress-code {
@@ -200,6 +203,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            border: 1px solid var(--primary);
         }
         
         .dress-code-icon {
@@ -225,7 +229,7 @@
         
         .schedule-table th {
             background-color: var(--secondary);
-            color: white;
+            color: var(--primary); /* Золотистый текст в шапке таблицы */
             font-weight: 600;
         }
         
@@ -256,7 +260,7 @@
         }
         
         .footer-item h3 {
-            color: white;
+            color: var(--primary); /* Золотистый цвет в футере */
             margin-bottom: 15px;
             font-size: 1.3rem;
         }
@@ -305,34 +309,11 @@
 <body>
     <header>
         <div class="container">
-            <h1>Приглашение на день рождения</h1>
+            <h1>Приглашение на праздничный ужин в честь Юбилея Игоря Шахрая</h1>
             <div class="date-badge">15 июля 2025</div>
-            <p>Дорогие гости, буду рад видеть вас на празднике!</p>
+            <p style="color: var(--primary); font-weight: 600;">Буду рад видеть вас, Уважаемые Гости!</p>
         </div>
     </header>
-
-    <section class="section-light">
-        <div class="container">
-            <h2>Вы придете на праздник?</h2>
-            <form id="rsvpForm" class="rsvp-form">
-                <input type="hidden" id="guestId" name="guestId" value="">
-                <div class="form-group">
-                    <div class="radio-group">
-                        <div class="radio-option">
-                            <input type="radio" id="attending-yes" name="attending" value="yes" required>
-                            <label for="attending-yes">ДА</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="attending-no" name="attending" value="no">
-                            <label for="attending-no">НЕТ</label>
-                        </div>
-                    </div>
-                </div>
-                <button type="submit">Отправить ответ</button>
-            </form>
-        </div>
-    </section>
-
     <section>
         <div class="container">
             <h2>Детали мероприятия</h2>
@@ -372,21 +353,16 @@
                         <td>Встреча гостей, фуршет</td>
                     </tr>
                     <tr>
-                        <td>19:00</td>
-                        <td>Торжественное поздравление</td>
+                        <td>18:30</td>
+                        <td>Торжественная часть</td>
                     </tr>
                     <tr>
-                        <td>19:30</td>
+                        <td>19:00</td>
                         <td>Ужин</td>
                     </tr>
                     <tr>
                         <td>21:00</td>
-                        <td>Танцы и развлечения</td>
-                    </tr>
-                    <tr>
-                        <td>23:00</td>
-                        <td>Запуск фейерверка</td>
-                    </tr>
+                        <td>Караоке</td>
                     <tr>
                         <td>00:00</td>
                         <td>Завершение праздника</td>
@@ -395,7 +371,25 @@
             </table>
         </div>
     </section>
-
+ <section class="section-light">
+        <div class="container">
+            <h2>Планируете ли Вы Присутствовать ?</h2>
+            <form id="rsvpForm" class="rsvp-form">
+                <input type="hidden" id="guestId" name="guestId" value="">
+                <div class="form-group">
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="attending-yes" name="attending" value="yes" required>
+                            <label for="attending-yes">ДА</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="attending-no" name="attending" value="no">
+                            <label for="attending-no">НЕТ</label>
+                        </div>
+                <button type="submit">Отправить ответ</button>
+            </form>
+        </div>
+    </section>
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -461,7 +455,7 @@
         }
         
         function createConfetti() {
-            const colors = ['#e74c3c', '#f39c12', '#2ecc71', '#3498db', '#9b59b6'];
+            const colors = ['#D4AF37', '#FFD700', '#F5D76E', '#E6C200', '#FFDF00']; // Разные оттенки золотого
             const container = document.querySelector('header');
             
             for (let i = 0; i < 100; i++) {
